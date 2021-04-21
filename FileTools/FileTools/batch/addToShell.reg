@@ -1,0 +1,10 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\IrfanView.jpg\shell\downscale_0.5]
+@="Downscale to 50%"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\IrfanView.jpg\shell\downscale_0.5\command]
+@="\"D:\\JAKUB\\programming\\PhotoTools\\FileTools\\FileTools\\batch\\makeHalfResolutionPhoto.bat\" \"%1\""
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\IrfanView.jpg\shell\downscale_0.5]
+"Icon"="D:\\JAKUB\\programming\\PhotoTools\\FileTools\\FileTools\\icons\\downscale_icon.ico,0"
