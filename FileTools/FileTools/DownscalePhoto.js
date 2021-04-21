@@ -17,7 +17,12 @@ const scale = process.argv[3] ? 1 * process.argv[3] : 0.5;
     let irfanPath = irfanLocal;
     const irfanPathTxt = path.join(scriptDir, "irfanpath.txt");
     if (await FileAccess(irfanPathTxt, FileAccess.MODE.READ)) {
-        const data = path.resolve((await ReadFile(irfanPathTxt)).toString().replace(/(^\s*|^"|"$|\s*$)/gm, ""));
+        let pathToIrfanDirty = (await ReadFile(irfanPathTxt)).toString();
+        //console.log(pathToIrfanDirty);
+        pathToIrfanDirty = pathToIrfanDirty.replace(/^\uFEFF/, '').replace(/(^\s+|^"|"$|"\s*\n|\s+$)/gs, "");
+        //console.log("Cleaned path: ", pathToIrfanDirty, pathToIrfanDirty.charCodeAt(0), pathToIrfanDirty.charCodeAt(1));
+
+        const data = path.resolve(pathToIrfanDirty);
         if (await FileAccess(data, FileAccess.MODE.READ)) {
             console.log("Set irfan view exe path to ", data);
             irfanPath = data;
@@ -34,7 +39,7 @@ const scale = process.argv[3] ? 1 * process.argv[3] : 0.5;
         process.exit(1);
     }
 
-    const proc = new IrfanViewProcessor(irfanLocal, currentDir);
+    const proc = new IrfanViewProcessor(irfanPath, currentDir);
     proc.input = input;
     proc.output = input.replace(/(\.[a-z]+$)/i, "_small$1");
     proc.addAction(new ImageChangeOption.ResampleRelative(scale));
@@ -47,5 +52,5 @@ const scale = process.argv[3] ? 1 * process.argv[3] : 0.5;
         console.dir(error);
         process.exit(2);
     }
-    
+
 })();
