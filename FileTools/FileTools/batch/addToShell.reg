@@ -1,0 +1,5 @@
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\IrfanView.jpg\shell\downscale_0.5]
+@="Downscale to 50%"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\IrfanView.jpg\shell\downscale_0.5\command]
+@="\"D:\\JAKUB\\programming\\PhotoTools\\FileTools\\FileTools\\batch\\makeHalfResolutionPhoto.bat\" \"%1\""

@@ -3,3 +3,7 @@
 ################################################################################
 
 /FileTools/.vs/FileTools/v15
+/FileTools/bin
+/FileTools/FileTools/node_modules
+/FileTools/FileTools/irfanpath.txt
+/FileTools/FileTools/files.txt
