@@ -9,6 +9,16 @@ class ExifHelper {
      */
     constructor(exif, filePath) {
         this.exif = exif;
+        if (exif == null || typeof exif=="undefined") {
+            this.exif = {
+                __invalid: true,
+                exif: {
+                    MakerNote: null,
+                    fNumber: 0,
+                    ExposureTime: 0
+                }
+            }
+        }
         //this.exif = {
         //    exif: {
         //        fNumber: exif.exif.FNumber,
@@ -25,6 +35,9 @@ class ExifHelper {
         //delete this.exif.interoperability;
         //delete this.exif.thumbnail;
         delete this.exif.exif.MakerNote;
+    }
+    get isValid() {
+        return this.exif && this.exif.exif && !this.exif.__invalid;
     }
     get fStop() {
         return this.exif.exif.FNumber;
@@ -57,7 +70,7 @@ class ExifHelper {
     // Returns true if the image is rotated "on side" and X and Y are swapped
     get isOnSide() {
         const ori = this.exif.image.Orientation;
-        return ori >= 5 && ori <= 8;
+        return (ori >= 5 && ori <= 8);
     }
     /**
      * Filename without path

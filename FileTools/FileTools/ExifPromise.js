@@ -1,5 +1,4 @@
-﻿import ExifImage from "exif";
-import FastExifImage from "fast-exif";
+﻿import FastExifImage from "fast-exif";
 
 /**
  * @typedef {Object} ExifInfo

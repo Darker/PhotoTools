@@ -53,6 +53,9 @@
     <Compile Include="fshelp\FileAccess.js" />
     <Compile Include="fshelp\FileStat.js" />
     <Compile Include="fshelp\fsPromise.js" />
+    <Compile Include="fshelp\ImageSize.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="fshelp\MakeDirectory.js">
       <SubType>Code</SubType>
     </Compile>
