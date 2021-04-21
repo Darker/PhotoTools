@@ -28,6 +28,12 @@ const scale = process.argv[3] ? 1 * process.argv[3] : 0.5;
         }
     }
 
+    if (!await FileAccess(irfanPath, FileAccess.MODE.READ)) {
+        console.error("Cannot find irfan view at " + irfanPath);
+        console.error("Either place irfan view at the listed path, or you can set path to irfan view by placing the path to the exefile in " + irfanPathTxt);
+        process.exit(1);
+    }
+
     const proc = new IrfanViewProcessor(irfanLocal, currentDir);
     proc.input = input;
     proc.output = input.replace(/(\.[a-z]+$)/i, "_small$1");
@@ -39,6 +45,7 @@ const scale = process.argv[3] ? 1 * process.argv[3] : 0.5;
         console.trace(error);
         console.log(error);
         console.dir(error);
+        process.exit(2);
     }
     
 })();
