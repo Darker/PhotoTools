@@ -5,10 +5,13 @@
   "main": "app.js",
   "type": "module",
   "author": {
-    "name": ""
+    "name": "Jakub Mareda"
   },
   "dependencies": {
     "fast-exif": "^1.0.1",
     "image-size": "^1.0.0"
+  },
+  "scripts": {
+    "postinstall": "node --experimental-modules ./install/ReplaceTemplates.js"
   }
 }
