@@ -1,3 +1,5 @@
+Windows Registry Editor Version 5.00
+
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\IrfanView.jpg\shell\downscale_0.5]
 @="Downscale to 50%"
 
