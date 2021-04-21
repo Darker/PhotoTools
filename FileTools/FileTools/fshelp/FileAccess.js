@@ -13,6 +13,7 @@ function FileAccess(name, mode = fs.constants.F_OK) {
     });
 }
 FileAccess.MODE = {
+    EXISTS: fs.constants.F_OK,
     READ: fs.constants.R_OK,
     WRITE: fs.constants.W_OK
 }

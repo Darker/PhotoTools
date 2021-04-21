@@ -1,4 +1,5 @@
 ﻿import ExifImage from "exif";
+import FastExifImage from "fast-exif";
 
 /**
  * @typedef {Object} ExifInfo
@@ -77,6 +78,8 @@
  * @property {number} exif.Saturation
  * @property {number} exif.Sharpness
  * @property {number} exif.SubjectDistanceRange
+ * @property {number} exif.PixelXDimension
+ * @property {number} exif.PixelYDimension
  * @property {Object} gps
  * @property {Object} interoperability
  * @property {string} interoperability.InteropIndex
@@ -165,18 +168,19 @@
  * @returns {Promise<ExifInfo>}
  */
 function ExifPromise(path) {
-    return new Promise(function (resolve, reject) {
-        try {
-            new ExifImage({ image: path }, function (error, exifData) {
-                if (error)
-                    reject(error);
-                else
-                    resolve(exifData);
-            });
-        } catch (error) {
-            reject(error);
-        }
-    });
+    //return new Promise(function (resolve, reject) {
+    //    try {
+    //        new ExifImage({ image: path }, function (error, exifData) {
+    //            if (error)
+    //                reject(error);
+    //            else
+    //                resolve(exifData);
+    //        });
+    //    } catch (error) {
+    //        reject(error);
+    //    }
+    //});
+    return FastExifImage.read(path);
 }
 
 export default ExifPromise;

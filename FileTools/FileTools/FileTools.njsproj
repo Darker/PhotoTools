@@ -6,7 +6,7 @@
     <RootNamespace>FileTools</RootNamespace>
     <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
     <NodeExeArguments>--experimental-modules</NodeExeArguments>
-    <ScriptArguments>C:\Users\jakub.mareda\Pictures\fotky\stockholm-2020</ScriptArguments>
+    <ScriptArguments>D:\JAKUB\images\photos\lounovice-timelapse-bunkr\vetve</ScriptArguments>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -14,7 +14,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4524576d-2165-4cfa-bfaf-6a4dab31ede8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>FindSeries.js</StartupFile>
+    <StartupFile>MakeTimelapse.js</StartupFile>
     <StartWebBrowser>False</StartWebBrowser>
     <SearchPath>
     </SearchPath>
@@ -32,6 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="DownscalePhoto.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ExifCompatibilityValidators.js">
       <SubType>Code</SubType>
     </Compile>
@@ -44,6 +47,9 @@
     <Compile Include="FindSeries.js">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="fshelp\ExecPromise.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="fshelp\FileAccess.js" />
     <Compile Include="fshelp\FileStat.js" />
     <Compile Include="fshelp\fsPromise.js" />
@@ -51,11 +57,26 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="fshelp\ReadDirectory.js" />
+    <Compile Include="fshelp\ReadFile.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="fshelp\RemoveDirectory.js" />
     <Compile Include="fshelp\RenameFile.js">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="fshelp\WriteFile.js" />
+    <Compile Include="imageProcessor\IImageFileProcessor.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="imageProcessor\ImageChangeOption.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="imageProcessor\IrfanViewProcessor.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MakeTimelapse.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PhotoSequence.js">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +85,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="fshelp\" />
+    <Folder Include="imageProcessor\" />
+    <Folder Include="batch\" />
   </ItemGroup>
   <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />

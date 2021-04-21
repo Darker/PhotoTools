@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "description": "FileTools",
   "main": "app.js",
-  "type":  "module",
+  "type": "module",
   "author": {
     "name": ""
   },
   "dependencies": {
-    "exif": "^0.6.0"
+    "exif": "^0.6.0",
+    "fast-exif": "^1.0.1"
   }
 }
