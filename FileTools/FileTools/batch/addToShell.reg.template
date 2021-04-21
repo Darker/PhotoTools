@@ -2,9 +2,15 @@ Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\IrfanView.jpg\shell\downscale_0.5]
 @="Downscale to 50%"
+"Icon"="${PHOTO_TOOLS_HOME_WINDOWS_ESCAPED}\\icons\\downscale_icon.ico,0"
 
 [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\IrfanView.jpg\shell\downscale_0.5\command]
 @="\"${PHOTO_TOOLS_HOME_WINDOWS_ESCAPED}\\batch\\makeHalfResolutionPhoto.bat\" \"%1\""
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\IrfanView.jpg\shell\downscale_0.5]
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppX43hnxtbyyps62jhe9sqpdzxn1790zetc\Shell\downscale_0.5]
+@="Downscale to 50%"
 "Icon"="${PHOTO_TOOLS_HOME_WINDOWS_ESCAPED}\\icons\\downscale_icon.ico,0"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AppX43hnxtbyyps62jhe9sqpdzxn1790zetc\Shell\downscale_0.5\command]
+@="\"${PHOTO_TOOLS_HOME_WINDOWS_ESCAPED}\\batch\\makeHalfResolutionPhoto.bat\" \"%1\""
